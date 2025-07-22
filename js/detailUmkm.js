@@ -9,9 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Add loading state
+  umkmDetailContainer.innerHTML = `
+        <div class="text-center text-gray-600 py-8">
+            <svg class="animate-spin h-8 w-8 text-gray-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Memuat detail UMKM...
+        </div>
+    `;
+
   fetch("../data/umkm.json")
     .then((response) => {
       if (!response.ok) {
+        console.error("Network response was not ok:", response.statusText);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       return response.json();
@@ -46,9 +58,27 @@ document.addEventListener("DOMContentLoaded", () => {
                             <h1 class="text-4xl font-extrabold text-gray-900 mb-4">${
                               umkm.nama
                             }</h1>
-                            <p class="text-xl text-indigo-700 mb-6">${
+                            <p class="text-xl text-gray-700 mb-6">${
                               umkm.jenisUsaha
                             }</p>
+
+                            ${
+                              umkm.youtubeLink
+                                ? `
+                                <div class="mb-6">
+                                    <button id="toggleVideoButton" class="flex items-center text-gray-700 hover:text-black font-semibold mb-2 transition-colors duration-200 focus:outline-none">
+                                        <span id="buttonText">Tampilkan Video Profil</span>
+                                        <svg id="buttonIcon" class="w-5 h-5 ml-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    </button>
+                                    <div id="videoContainer" class="video-section-hidden overflow-hidden transition-all duration-500 ease-in-out">
+                                        <div class="video-wrapper rounded-lg shadow-md border border-gray-100">
+                                            <iframe src="${umkm.youtubeLink}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            `
+                                : ""
+                            }
 
                             <h2 class="text-2xl font-semibold text-gray-800 mb-3 border-b pb-2 border-gray-200">Deskripsi</h2>
                             <p class="text-gray-700 leading-relaxed mb-6">${
@@ -60,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <p class="text-gray-700 mb-1"><strong>No WA/Telp:</strong> <a href="https://wa.me/${umkm.noWaTelp.replace(
                                   /[^0-9]/g,
                                   ""
-                                )}" target="_blank" class="text-green-700 hover:underline font-medium">${
+                                )}" target="_blank" class="text-gray-700 hover:text-black hover:underline font-medium">${
           umkm.noWaTelp
         }</a></p>
                                 <p class="text-gray-700 mb-1"><strong>Alamat:</strong> ${
@@ -89,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             ${
                               umkm.catatan
                                 ? `
-                                <div class="mb-6 bg-blue-50 border-l-4 border-blue-400 text-blue-800 p-4 rounded-md">
+                                <div class="mb-6 bg-gray-50 border-l-4 border-gray-400 text-gray-800 p-4 rounded-md">
                                     <p class="font-semibold">Catatan:</p>
                                     <p class="text-sm">${umkm.catatan}</p>
                                 </div>
@@ -101,26 +131,39 @@ document.addEventListener("DOMContentLoaded", () => {
                               umkm.gmapsEmbed
                                 ? `
                                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Lokasi di Google Maps:</h3>
-                                <div class="video-container rounded-lg shadow-md mb-6 border border-gray-100">
+                                <div class="video-wrapper rounded-lg shadow-md mb-6 border border-gray-100">
                                     <iframe src="${umkm.gmapsEmbed}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
                                 </div>
                             `
                                 : ""
                             }
 
-                            ${
-                              umkm.youtubeLink
-                                ? `
-                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Video Profil:</h3>
-                                <div class="video-container rounded-lg shadow-md border border-gray-100">
-                                    <iframe src="${umkm.youtubeLink}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg"></iframe>
-                                </div>
-                            `
-                                : ""
-                            }
                         </div>
                     </div>
                 `;
+        // Add event listener AFTER injecting HTML
+        const toggleButton = document.getElementById("toggleVideoButton");
+        const videoContainer = document.getElementById("videoContainer");
+        const buttonIcon = document.getElementById("buttonIcon");
+        const buttonText = document.getElementById("buttonText");
+
+        if (toggleButton && videoContainer && buttonIcon && buttonText) {
+          toggleButton.addEventListener("click", () => {
+            if (videoContainer.classList.contains("video-section-hidden")) {
+              videoContainer.classList.remove("video-section-hidden");
+              videoContainer.classList.add("video-section-shown");
+              buttonText.textContent = "Sembunyikan Video Profil";
+              buttonIcon.classList.remove("rotate-0"); // Rotate down initially
+              buttonIcon.classList.add("rotate-180"); // Rotate up
+            } else {
+              videoContainer.classList.remove("video-section-shown");
+              videoContainer.classList.add("video-section-hidden");
+              buttonText.textContent = "Tampilkan Video Profil";
+              buttonIcon.classList.remove("rotate-180"); // Rotate up
+              buttonIcon.classList.add("rotate-0"); // Rotate down
+            }
+          });
+        }
       } else {
         umkmDetailContainer.innerHTML =
           '<p class="text-red-600 text-center py-8">UMKM tidak ditemukan.</p>';
@@ -128,7 +171,12 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => {
       console.error("Error fetching UMKM data:", error);
-      umkmDetailContainer.innerHTML =
-        '<p class="text-red-600 text-center py-8">Gagal memuat detail UMKM. Silakan coba lagi nanti.</p>';
+      umkmDetailContainer.innerHTML = `
+                <div class="text-center text-red-600 py-8">
+                    <p>Maaf, gagal memuat detail UMKM.</p>
+                    <p class="text-sm mt-2">Silakan periksa koneksi internet Anda atau coba lagi nanti.</p>
+                    <p class="text-xs mt-1">(${error.message})</p>
+                </div>
+            `;
     });
 });

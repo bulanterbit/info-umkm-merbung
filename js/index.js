@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Anda bisa menambahkan logika JS di sini jika ada elemen interaktif di index.html
-  // Misalnya, efek parallax, slider gambar, dll.
-  // Karena galeri sekarang statis dengan narasi di HTML, tidak banyak JS yang dibutuhkan.
-
-  // Contoh sederhana untuk mengamati animasi (opsional)
+  // Observer for fade-in animations
   const observerOptions = {
     root: null,
     rootMargin: "0px",
@@ -14,18 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
+        entry.target.style.transform = "translate(0,0)"; // Reset transform for different animations
         observer.unobserve(entry.target);
       }
     });
   };
 
   const animateElements = document.querySelectorAll(
-    ".animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right"
+    ".animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right, .animate-fade-in"
   );
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
   animateElements.forEach((el) => {
     observer.observe(el);
   });
+
+  // You can add more complex JS here if you want a dynamic gallery in the future
+  // For now, the main content is mostly static HTML for the gallery feel.
 });

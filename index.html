@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Info UMKM Merbung - Klaten Selatan</title>
+    <title>Galeri UMKM Merbung - Klaten Selatan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/index.css" />
     <style>
       body {
-        font-family: "Open Sans", sans-serif;
-        background-color: #ffffff; /* Putih bersih */
+        font-family: "Lora", serif; /* Default body font */
+        background-color: #f8f8f8; /* Light gray background */
+        color: #333333; /* Dark gray text */
       }
       h1,
       h2,
@@ -21,150 +22,204 @@
       h4,
       h5,
       h6 {
-        font-family: "Montserrat", sans-serif;
+        font-family: "Playfair Display", serif; /* Headings font */
+      }
+      /* Custom scrollbar for a cleaner look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f8f8f8;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #bbbbbb;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #888888;
       }
     </style>
   </head>
-  <body class="bg-white text-gray-800">
+  <body class="bg-gray-50 text-gray-800 overflow-x-hidden">
     <header
       class="bg-white shadow-sm p-4 sticky top-0 z-50 border-b border-gray-200"
     >
       <nav class="container mx-auto flex justify-between items-center">
         <div class="text-2xl font-bold text-gray-900">
-          INFO UMKM <span class="text-indigo-700">MERBUNG</span>
+          INFO UMKM <span class="text-gray-700">MERBUNG</span>
         </div>
         <ul class="flex space-x-8">
           <li>
             <a
               href="index.html"
-              class="text-gray-700 hover:text-indigo-700 font-semibold transition duration-200"
+              class="text-gray-900 hover:text-black font-semibold transition duration-200"
               >Beranda</a
             >
           </li>
           <li>
             <a
               href="pages/listUmkm.html"
-              class="text-gray-700 hover:text-indigo-700 font-semibold transition duration-200"
+              class="text-gray-700 hover:text-black font-semibold transition duration-200"
               >Daftar UMKM</a
             >
           </li>
           <li>
             <a
               href="#about"
-              class="text-gray-700 hover:text-indigo-700 font-semibold transition duration-200"
+              class="text-gray-700 hover:text-black font-semibold transition duration-200"
               >Tentang</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contact"
-              class="text-gray-700 hover:text-indigo-700 font-semibold transition duration-200"
-              >Kontak</a
             >
           </li>
         </ul>
       </nav>
     </header>
 
-    <section class="bg-white py-20 text-center border-b border-gray-200">
-      <div class="container mx-auto px-4">
+    <div
+      class="fixed left-0 top-1/2 -translate-y-1/2 z-40 p-4 transform -rotate-90 origin-top-left text-gray-600 text-xs tracking-wider uppercase hidden md:block"
+    >
+      <a
+        href="https://instagram.com/kkn_upnvyk_318"
+        target="_blank"
+        class="mr-6 hover:text-black transition-colors duration-200"
+        >Instagram</a
+      >
+      <a href="#" class="mr-6 hover:text-black transition-colors duration-200"
+        >Twitter</a
+      >
+      <a href="#" class="hover:text-black transition-colors duration-200"
+        >Facebook</a
+      >
+    </div>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 min-h-screen">
+      <section
+        class="lg:col-span-2 p-8 md:p-16 lg:p-24 flex flex-col justify-start relative border-b lg:border-r lg:border-b-0 border-gray-200"
+      >
         <h1
-          class="text-6xl font-extrabold mb-4 text-gray-900 animate-fade-in-up"
+          class="text-7xl md:text-8xl font-bold text-gray-900 leading-tight mb-8 mt-24 lg:mt-0 animate-fade-in-up"
         >
-          Menginspirasi Potensi Lokal
+          Galeri UMKM <br /><span class="text-gray-600">Merbung</span>
         </h1>
         <p
-          class="text-xl mb-8 text-gray-600 max-w-3xl mx-auto opacity-90 animate-fade-in-up delay-200"
+          class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-12 max-w-2xl animate-fade-in-up delay-200"
         >
-          Jelajahi keberagaman dan kualitas Usaha Mikro, Kecil, dan Menengah
-          (UMKM) yang menjadi kebanggaan Desa Merbung, Klaten Selatan.
+          Temukan koleksi UMKM pilihan dari Desa Merbung, Kecamatan Klaten
+          Selatan. Sebuah eksplorasi potensi lokal.
         </p>
-        <a
-          href="pages/listUmkm.html"
-          class="bg-indigo-700 text-white hover:bg-indigo-800 px-10 py-4 rounded-full font-bold shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+
+        <div class="space-y-16 mt-12 mb-24 w-full">
+          <div
+            class="flex flex-col md:flex-row items-center gap-8 animate-fade-in-up delay-400"
+          >
+            <img
+              src="img/galeri-home-1.jpg"
+              alt="Pemberdayaan UMKM"
+              class="w-full md:w-1/2 h-64 object-cover rounded-lg shadow-md border border-gray-100"
+            />
+            <div class="md:w-1/2">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-2">
+                Pemberdayaan Ekonomi Lokal
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Setiap langkah kecil dari UMKM adalah dorongan besar bagi
+                ekonomi desa. Kami berkomitmen untuk menghadirkan produk-produk
+                terbaik Merbung.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row-reverse items-center gap-8 animate-fade-in-up delay-500"
+          >
+            <img
+              src="img/galeri-home-2.jpg"
+              alt="Kualitas Produk"
+              class="w-full md:w-1/2 h-64 object-cover rounded-lg shadow-md border border-gray-100"
+            />
+            <div class="md:w-1/2">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-2">
+                Kualitas Terjamin, Cita Rasa Khas
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Dari kerajinan tangan hingga kuliner legendaris, setiap produk
+                UMKM Merbung membawa cerita dan kualitas yang tak tertandingi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-end w-full mt-auto animate-fade-in-up delay-600">
+          <div class="flex-grow border-t border-gray-300 pt-4">
+            <p class="text-lg text-gray-700 leading-relaxed max-w-md">
+              Misi kami adalah menampilkan dan mendukung inovasi serta kualitas
+              dari setiap produk yang dihasilkan oleh UMKM di Merbung.
+            </p>
+            <a
+              href="pages/listUmkm.html"
+              class="inline-block mt-6 text-gray-800 hover:text-black transition-colors duration-200 font-semibold border-b border-gray-400 pb-1"
+            >
+              Lihat Lebih Banyak UMKM →
+            </a>
+          </div>
+          <div
+            class="flex-shrink-0 text-gray-600 text-4xl font-light ml-8 relative top-2"
+          >
+            01
+            <div class="w-10 h-px bg-gray-400 mt-2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="p-4 md:p-8 lg:p-12 flex flex-col justify-between items-center bg-gray-100 border-b lg:border-b-0 border-gray-200 lg:border-l"
+      >
+        <div
+          class="w-full h-80 lg:h-full bg-gray-300 flex items-center justify-center overflow-hidden rounded-lg relative mb-8 lg:mb-0 animate-fade-in"
         >
-          Lihat Semua UMKM
-        </a>
-      </div>
-    </section>
-
-    <section id="gallery" class="py-16 bg-white border-b border-gray-200">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">
-          Mengapa UMKM Merbung Penting?
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-          <div class="animate-fade-in-right">
-            <img
-              src="img/galeri-1.jpg"
-              alt="Komitmen Kami"
-              class="w-full h-80 object-cover rounded-lg shadow-xl"
-            />
-          </div>
-          <div class="animate-fade-in-left">
-            <h3 class="text-3xl font-semibold text-gray-900 mb-4">
-              Komitmen Kami untuk Kesejahteraan Lokal
-            </h3>
-            <p class="text-lg text-gray-700 leading-relaxed">
-              Kami percaya bahwa UMKM adalah pilar utama dalam pembangunan
-              ekonomi desa. Melalui platform ini, kami berupaya mendorong
-              pertumbuhan mereka, menciptakan lapangan kerja, dan meningkatkan
-              kesejahteraan masyarakat Merbung secara berkelanjutan.
-            </p>
-          </div>
+          <img
+            src="img/baksoMangKubil.png"
+            alt="Featured UMKM"
+            class="w-full h-full object-cover object-center transform transition-transform duration-500 hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+          ></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-          <div class="md:order-2 animate-fade-in-left">
-            <img
-              src="img/galeri-2.jpg"
-              alt="Inovasi Produk"
-              class="w-full h-80 object-cover rounded-lg shadow-xl"
-            />
-          </div>
-          <div class="md:order-1 animate-fade-in-right">
-            <h3 class="text-3xl font-semibold text-gray-900 mb-4">
-              Inovasi dan Kualitas dari Tangan Ahli
-            </h3>
-            <p class="text-lg text-gray-700 leading-relaxed">
-              Setiap produk dan layanan UMKM di Merbung adalah hasil dari
-              dedikasi, kreativitas, dan kerja keras. Dari kuliner tradisional
-              hingga kerajinan modern, kami menampilkan inovasi dan kualitas
-              yang layak Anda banggakan.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div class="animate-fade-in-right">
-            <img
-              src="img/galeri-3.jpg"
-              alt="Dampak Sosial"
-              class="w-full h-80 object-cover rounded-lg shadow-xl"
-            />
-          </div>
-          <div class="animate-fade-in-left">
-            <h3 class="text-3xl font-semibold text-gray-900 mb-4">
-              Dampak Sosial dan Kelestarian Budaya
-            </h3>
-            <p class="text-lg text-gray-700 leading-relaxed">
-              Dengan mendukung UMKM Merbung, Anda tidak hanya mendapatkan produk
-              berkualitas, tetapi juga berkontribusi pada pelestarian budaya
-              lokal dan pemberdayaan komunitas. Setiap pembelian adalah
-              investasi untuk masa depan yang lebih baik.
-            </p>
+        <div
+          class="w-full p-4 lg:p-0 text-center lg:text-left animate-fade-in delay-200"
+        >
+          <p class="text-sm text-gray-700 mb-4">
+            Setiap UMKM di Merbung memiliki cerita unik dan dedikasi luar biasa.
+            Jelajahi lebih dalam.
+          </p>
+          <div
+            class="flex justify-center lg:justify-start items-center space-x-4"
+          >
+            <a
+              href="pages/detailUmkm.html?id=umkm001"
+              class="text-gray-800 hover:text-black transition-colors duration-200 font-semibold border-b border-gray-400 pb-1 text-sm"
+            >
+              Detail UMKM Dwie T-Shirt
+            </a>
+            <div
+              class="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center text-gray-600 hover:text-black hover:border-black cursor-pointer transition-all duration-200"
+            >
+              &rarr;
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="about" class="py-16 bg-white border-b border-gray-200">
-      <div class="container mx-auto px-4 text-center">
+    <section
+      id="about"
+      class="py-16 md:py-24 bg-white border-b border-gray-200"
+    >
+      <div class="container mx-auto px-4 text-center max-w-3xl">
         <h2 class="text-4xl font-bold mb-8 text-gray-900">
-          Tentang Info UMKM Merbung
+          Tentang Proyek ini
         </h2>
-        <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
           Platform ini didedikasikan untuk mendukung dan mempromosikan Usaha
           Mikro, Kecil, dan Menengah (UMKM) yang beroperasi di Desa Merbung,
           Kecamatan Klaten Selatan, Kabupaten Klaten. Kami percaya bahwa UMKM
@@ -172,60 +227,10 @@
           serta layanan mereka, kami berharap dapat membantu mereka berkembang
           dan dikenal lebih luas.
         </p>
-      </div>
-    </section>
-
-    <section id="contact" class="py-16 bg-white border-b border-gray-200">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold mb-8 text-gray-900">Hubungi Kami</h2>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
-          Jika Anda adalah UMKM di Merbung dan ingin terdaftar di website ini,
-          atau memiliki pertanyaan lainnya, jangan ragu untuk menghubungi kami.
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Proyek ini adalah bagian dari inisiatif pengembangan komunitas oleh
+          Mahasiswa KKN UPN "Veteran" Yogyakarta Kelompok 318 Angkatan 83.
         </p>
-        <div
-          class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8"
-        >
-          <a
-            href="mailto:info@umkmmerbung.com"
-            class="bg-indigo-700 text-white px-8 py-3 rounded-lg shadow-md hover:bg-indigo-800 transition duration-300 flex items-center font-semibold"
-          >
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-4 4v4a2 2 0 01-2 2H7a2 2 0 01-2-2v-4m0-4h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"
-              ></path>
-            </svg>
-            Email Kami
-          </a>
-          <a
-            href="tel:+6281234567890"
-            class="bg-green-700 text-white px-8 py-3 rounded-lg shadow-md hover:bg-green-800 transition duration-300 flex items-center font-semibold"
-          >
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10.5 9.87a1 1 0 00.54.54l3.78 1.763a1 1 0 00.948-.684V21a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
-              ></path>
-            </svg>
-            Telepon Kami
-          </a>
-        </div>
       </div>
     </section>
 
@@ -233,7 +238,7 @@
       class="bg-white text-gray-700 py-8 text-center border-t border-gray-200"
     >
       <div class="container mx-auto px-4">
-        <p class="mb-2">&copy; 2025 Info UMKM Merbung. Hak Cipta Dilindungi.</p>
+        <p class="mb-2">© 2025 Info UMKM Merbung. Hak Cipta Dilindungi.</p>
         <p class="text-sm">
           Inisiatif dari Mahasiswa KKN UPN "Veteran" Yogyakarta Kelompok 318
           Angkatan 83.

@@ -1,8 +1,5 @@
 /* Custom CSS for index.html */
 
-/* Font import (sudah di HTML, ini hanya untuk referensi jika mau di sini) */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap'); */
-
 /* Animasi */
 @keyframes fadeInFromBottom {
   from {
@@ -37,6 +34,15 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInFromBottom 0.8s ease-out forwards;
 }
@@ -59,21 +65,27 @@
   opacity: 0; /* Ensure it starts hidden */
 }
 
-/* Scrollbar styling (optional, for aesthetics) */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Penyesuaian umum untuk nuansa monokrom dan profesional */
+/* (Kebanyakan sudah ditangani oleh Tailwind CSS di HTML) */
+
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Lebih terang */
-  border-radius: 10px;
+  background: #f8f8f8; /* Light gray to match background */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bbb; /* Lebih terang */
-  border-radius: 10px;
+  background: #bbbbbb; /* Medium gray */
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: #888888; /* Darker gray on hover */
 }
