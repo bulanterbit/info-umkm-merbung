@@ -1,0 +1,32 @@
+[
+  {
+    "id": "umkm001",
+    "nama": "Dwie T-Shirt",
+    "jenisUsaha": "Produksi dan jasa bordir kaos, baju, celana, handuk, serta menerima pesanan sesuai permintaan",
+    "noWaTelp": "085729962182 (Kantor)",
+    "varian": ["Kaos", "Baju", "Celana", "Jasa bordir (kaos, handuk, dll)"],
+    "catatan": "Produksi bordir dilakukan di cabang (lokal), sementara potong, jahit, dan sablon dilakukan di pusat (Jogja). Pesanan dari sekolah umumnya hanya bordir; pesanan lengkap berasal dari institusi pendidikan di Jogja, sedangkan di lokasi ini lebih banyak perorangan.",
+    "rangeHarga": "Mulai dari Rp50.000 (tergantung bahan dan desain)",
+    "alamat": "Jl. Kuntowijayandanu, Krapyak, Merbung, Kec. Klaten Sel., Kabupaten Klaten, Jawa Tengah 57424",
+    "deskripsi": "Dwie T-Shirt adalah UMKM yang bergerak di bidang produksi dan jasa bordir. Kami melayani berbagai kebutuhan pakaian dengan kualitas terbaik, mulai dari kaos, baju, celana, hingga handuk. Dengan pengalaman bertahun-tahun, kami berkomitmen memberikan hasil yang memuaskan untuk kebutuhan personal maupun institusi.",
+    "gmapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.250567822944!2d110.60384837488094!3d-7.771966292243407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a469a9b7a421d%3A0xc3f8f17a9c3b8b6d!2sDwie%20T-Shirt!5e0!3m2!1sen!2sid!4v1701000000000!5m2!1sen!2sid",
+    "gambarUtama": "baksoMangKubil.png",
+    "gambarLainnya": ["gambar-dwie-shirt-1.jpg", "gambar-dwie-shirt-2.jpg"],
+    "youtubeLink": "https://www.youtube.com/embed/VIDEO_ID_DWIE_TSHIRT"
+  },
+  {
+    "id": "umkm002",
+    "nama": "UMKM Contoh Lain",
+    "jenisUsaha": "Produk kerajinan tangan",
+    "noWaTelp": "081234567890",
+    "varian": ["Souvenir", "Dekorasi rumah"],
+    "catatan": "UMKM ini fokus pada produk ramah lingkungan.",
+    "rangeHarga": "Mulai dari Rp20.000",
+    "alamat": "Jl. Contoh, Merbung, Klaten Selatan",
+    "deskripsi": "Menyediakan berbagai kerajinan tangan unik yang cocok untuk souvenir maupun dekorasi rumah. Setiap produk dibuat dengan detail dan cinta.",
+    "gmapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.250567822944!2d110.60384837488094!3d-7.771966292243407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a469a9b7a421d%3A0xc3f8f17a9c3b8b6d!2sDwie%20T-Shirt!5e0!3m2!1sen!2sid!4v1701000000000!5m2!1sen!2sid",
+    "gambarUtama": "gambar-umkm-contoh.jpg",
+    "gambarLainnya": [],
+    "youtubeLink": ""
+  }
+]
