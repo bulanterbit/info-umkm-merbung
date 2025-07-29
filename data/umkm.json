@@ -279,5 +279,42 @@
     "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
+  },
+  {
+    "id": "umkm016",
+    "nama": "Restu Food",
+    "jenisUsaha": "Produksi dan penjualan makanan ringan dan cepat saji",
+    "noWaTelp": "082226371717",
+    "varian": [
+      "Donat (diameter D5–D10, topping: coklat, meses, vanila, keju, tiramisu, dll)",
+      "Burger (beragam topping & diameter)",
+      "Hotdog",
+      "Eggroll ±200g",
+      "Pizza (beragam topping & diameter)",
+      "Produk lainnya"
+    ],
+    "catatan": null,
+    "rangeHarga": "Donat: Rp2.500 – Rp6.000 (tergantung topping & diameter); Burger: Rp4.000 – Rp8.000 (tergantung topping & diameter); Pizza: Rp20.000 – Rp80.000 (tergantung topping & diameter); Eggroll (±200g): Rp30.000",
+    "alamat": "Perum Krapyak Permai Gg. 1 RT 01, RW 11, Desa Merbung, Kec. Klaten Selatan, Kab. Klaten 57421 Jawa Tengah",
+    "deskripsi": "Restu Food memproduksi dan menjual berbagai makanan ringan dan cepat saji seperti donat dengan beragam topping, burger, hotdog, eggroll, dan pizza. Tersedia dalam berbagai ukuran dan pilihan rasa.",
+    "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
+    "gambarUtama": "1.jpg",
+    "gambarLainnya": [
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg",
+      "7.jpg",
+      "8.jpg",
+      "9.jpg",
+      "10.jpg",
+      "11.jpg",
+      "12.jpg",
+      "13.jpg",
+      "14.jpg",
+      "15.jpg"
+    ],
+    "youtubeLink": ""
   }
 ]
