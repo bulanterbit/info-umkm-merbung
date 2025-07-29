@@ -10,8 +10,8 @@
     "alamat": "Jl. Kuntowijayandanu, Krapyak, Merbung, Kec. Klaten Sel., Kabupaten Klaten, Jawa Tengah 57424",
     "deskripsi": "Dwie T-Shirt menyediakan jasa produksi dan bordir untuk berbagai jenis pakaian seperti kaos, baju, celana, dan handuk. Melayani pesanan custom sesuai kebutuhan Anda.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Dwie T-Shirt/1.jpg",
-    "gambarLainnya": ["Dwie T-Shirt/2.jpg", "Dwie T-Shirt/3.jpg"],
+    "gambarUtama": "1.jpg",
+    "gambarLainnya": ["2.jpg", "3.jpg"],
     "youtubeLink": ""
   },
   {
@@ -29,7 +29,7 @@
     "alamat": "Ruko perum Krapyak, Citra Indah, Jl. Kuntowijayandanu No.7, Krapyak, Merbung, Kec. Klaten Sel., Kabupaten Klaten, Jawa Tengah 57424",
     "deskripsi": "Kios Ratna menyediakan berbagai kebutuhan pokok dan sembako dengan sistem grosir dan eceran. Barang didapatkan dari sales dan grosiran di Samilaris.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Kios Ratna/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -48,7 +48,7 @@
     "alamat": "Krapyak, Merbung, Klaten Selatan, Kabupaten Klaten, Jawa Tengah",
     "deskripsi": "Rejo Buah menawarkan berbagai jenis buah segar sesuai musim. Buah didapatkan langsung dari Solo atau Jogja untuk menjamin kesegaran dan kualitas.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Rejo Buah/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -69,7 +69,7 @@
     "alamat": "Krapyak, Merbung, Klaten Selatan, Kabupaten Klaten, Jawa Tengah",
     "deskripsi": "Pet Shop menyediakan beragam produk dan perlengkapan untuk hewan peliharaan Anda, mulai dari makanan, obat-obatan, kandang, hingga aksesori.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Pet Shop/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -90,7 +90,7 @@
     "alamat": "Jl. Bima No.20, Karen, Kalikotes, Kec. Klaten Tengah, Kabupaten Klaten, Jawa Tengah 57451",
     "deskripsi": "Renita Sayur 3 menyediakan beragam sayuran segar, daging ayam, frozen food, jajanan ringan, hingga sembako. Stok selalu segar karena berasal dari distributor dan pasar setiap hari.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Renita Sayur 3/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -109,7 +109,7 @@
     "alamat": "Jl. Kuntowijayandanu No.9, Kec. Klaten Tengah, Kabupaten Klaten, Jawa Tengah",
     "deskripsi": "Catering Ukhuwah menyediakan jasa katering profesional untuk berbagai acara, termasuk Nasi Bukhori dan tumpeng. Menu dapat disesuaikan dengan kebutuhan Anda.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Catering Ukhuwah/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -128,7 +128,7 @@
     "alamat": "Ruko Perum Citra Indah, Jl. Kuntowijayandanu No.3, Krapyak, Merbung, Kec. Klaten Sel., Kabupaten Klaten, Jawa Tengah 57424",
     "deskripsi": "Aneka Camilan Noltig memproduksi dan menjual berbagai camilan ringan yang didistribusikan ke angkringan melalui sistem titip jual, menyasar konsumen umum di area lokal.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Aneka Camilan Noltig/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -143,7 +143,7 @@
     "alamat": "Gg. Citra Indah VIII No.14 Blok P, Krapyak, Merbung, Kec. Klaten Sel., Kabupaten Klaten, Jawa Tengah 57426",
     "deskripsi": "Es Potong memproduksi es potong tradisional dengan varian rasa vanilla, coklat, dan stroberi. Produksi mencapai 400 lonjor per hari dan didistribusikan secara luas.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Es Potong/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -161,7 +161,7 @@
     "alamat": "Gg. Citra Indah V, Krapyak, Merbung, Kec. Klaten Sel., Kabupaten Klaten, Jawa Tengah 57426",
     "deskripsi": "Eggroll Bu Kuncoro menyediakan eggroll dengan berbagai varian rasa dan pangsit cumi. Produk ini tersedia untuk umum, kantor, pesanan khusus, dan reseller.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Eggroll Bu Kuncoro/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -179,7 +179,7 @@
     "alamat": "Krapyak, Merbung, Klaten Selatan, Kabupaten Klaten, Jawa Tengah",
     "deskripsi": "Donat Kentang Bu Agus memproduksi donat sebagai produk utama, serta melayani pesanan makanan rumahan dan jajanan pasar lainnya. Produk tersedia untuk titip jual dan berbagai acara.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Donat Kentang Bu Agus/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -194,7 +194,7 @@
     "alamat": "Gg. Citra Indah VIII, Krapyak, Merbung, Kec. Klaten Sel., Kabupaten Klaten, Jawa Tengah 57424",
     "deskripsi": "Batik Dhemes menawarkan berbagai jenis batik dan kain lurik Klaten berkualitas tinggi. Sebagai pengecer langsung dari pabrik, Batik Dhemes menjamin produk yang otentik.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Batik Dhemes/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -218,7 +218,7 @@
     "alamat": "Perum Citra Indah B4 RT.01/13 Kel.Merbung Klaten Selatan",
     "deskripsi": "Kedai Kreatif menciptakan kerajinan unik dari daur ulang galon air mineral, seperti pot tanaman, vas bunga, hingga tempat hantaran seserahan. Semua produk dibuat secara manual dengan teliti.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Kedai Kreatif/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -236,7 +236,7 @@
     "alamat": "Depan masjid Al Iklas Perumahan citra Indah RW.13 Kel.Merbung Klaten Selatan",
     "deskripsi": "Bakso Pangsit menyajikan kuliner rumahan lezat, termasuk bakso, pangsit, dan berbagai jajanan. Tersedia juga minuman segar dan minuman rempah racikan sendiri dari bahan alami.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Bakso Pangsit/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -251,7 +251,7 @@
     "alamat": "Ruko No. 1, Perum Citra Indah, RT 01 RW 13, Merbung, Klaten Selatan",
     "deskripsi": "Mujur Snack menyediakan berbagai jajanan pasar dan nasi box untuk berbagai acara. Menerima titipan produk dan melayani pesanan khusus seperti untuk lamaran pernikahan.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Mujur Snack/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   },
@@ -276,7 +276,7 @@
     "alamat": "Ruko No. 1, Perum Citra Indah, RT 01 RW 13, Merbung, Klaten Selatan",
     "deskripsi": "Lucky Offset menawarkan jasa percetakan dan desain grafis lengkap, mulai dari nota, kalender, stiker, hingga undangan pernikahan. Desain dikerjakan oleh pemilik dengan hasil cetak berkualitas.",
     "gmapsEmbed": "http://googleusercontent.com/maps.google.com/9... (Placeholder, ganti dengan link embed asli)",
-    "gambarUtama": "Lucky Offset/1.jpg",
+    "gambarUtama": "1.jpg",
     "gambarLainnya": [],
     "youtubeLink": ""
   }

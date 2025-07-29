@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => {
       // Check if response is OK (status 200-299)
       if (!response.ok) {
-        console.error("Network response was not ok:", response.statusText);
+        console.error("Gagal memuat data UMKM:", response.status);
+        umkmListContainer.innerHTML =
+          '<p class="text-center text-red-600 py-8">Gagal memuat daftar UMKM. Terjadi kesalahan pada server.</p>';
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       return response.json();
@@ -31,9 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       umkmData.forEach((umkm) => {
+        // Konversi nama UMKM menjadi format folder (literal)
+        const umkmFolderName = umkm.nama; // Gunakan nama UMKM secara literal
+        const gambarUtamaPath = `../img/${umkmFolderName}/${umkm.gambarUtama}`;
+
         const umkmCard = `
                     <div class="bg-white rounded-lg shadow-sm overflow-hidden transform transition-transform duration-300 hover:scale-102 hover:shadow-lg border border-gray-100">
-                        <img src="../img/${umkm.gambarUtama}" alt="${umkm.nama}" class="w-full h-48 object-cover object-center border-b border-gray-100">
+                        <img src="${gambarUtamaPath}" alt="${umkm.nama}" class="w-full h-48 object-cover object-center border-b border-gray-100">
                         <div class="p-4">
                             <h3 class="text-xl font-semibold text-gray-900 mb-2 line-clamp-1">${umkm.nama}</h3>
                             <p class="text-sm text-gray-700 mb-2 line-clamp-1">${umkm.jenisUsaha}</p>
@@ -48,13 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch((error) => {
-      console.error("Error fetching or parsing UMKM data:", error);
-      umkmListContainer.innerHTML = `
-                <div class="text-center text-red-600 col-span-full py-8">
-                    <p>Maaf, gagal memuat data UMKM.</p>
-                    <p class="text-sm mt-2">Silakan periksa koneksi internet Anda atau coba lagi nanti.</p>
-                    <p class="text-xs mt-1">(${error.message})</p>
-                </div>
-            `;
+      console.error("Error dalam promise:", error);
+      if (umkmListContainer.innerHTML.includes("Memuat daftar UMKM...")) {
+        umkmListContainer.innerHTML =
+          '<p class="text-center text-red-600 py-8">Gagal memuat daftar UMKM. Silakan coba lagi nanti.</p>';
+      }
     });
 });

@@ -32,10 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const umkm = umkmData.find((item) => item.id === umkmId);
 
       if (umkm) {
+        // Konversi nama UMKM menjadi format folder (literal)
+        const umkmFolderName = umkm.nama; // Gunakan nama UMKM secara literal
+        const gambarUtamaPath = `../img/${umkmFolderName}/${umkm.gambarUtama}`;
+
         umkmDetailContainer.innerHTML = `
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div>
-                            <img src="../img/${umkm.gambarUtama}" alt="${
+                            <img src="${gambarUtamaPath}" alt="${
           umkm.nama
         }" class="w-full h-80 object-cover rounded-lg shadow-md mb-6 border border-gray-100">
                             ${
@@ -45,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <div class="grid grid-cols-2 gap-4 mt-4">
                                     ${umkm.gambarLainnya
                                       .map(
-                                        (img) =>
-                                          `<img src="../img/${img}" alt="${umkm.nama}" class="w-full h-32 object-cover rounded-lg shadow-sm border border-gray-100">`
+                                        (imgPath) =>
+                                          `<img src="../img/${umkmFolderName}/${imgPath}" alt="${umkm.nama}" class="w-full h-32 object-cover rounded-lg shadow-sm border border-gray-100">`
                                       )
                                       .join("")}
                                 </div>
@@ -87,10 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                             <div class="mb-6 border-b pb-2 border-gray-200">
                                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Informasi Kontak & Lokasi:</h3>
-                                <p class="text-gray-700 mb-1"><strong>No WA/Telp:</strong> <a href="https://wa.me/${umkm.noWaTelp.replace(
-                                  /[^0-9]/g,
-                                  ""
-                                )}" target="_blank" class="text-gray-700 hover:text-black hover:underline font-medium">${
+                                <p class="text-gray-700 mb-1"><strong>No WA/Telp:</strong> <a href="https://wa.me/${umkm.noWaTelp
+                                  .replace(/[^0-9]/g, "")
+                                  .split(",")[0]
+                                  .trim()}" target="_blank" class="text-gray-700 hover:text-black hover:underline font-medium">${
           umkm.noWaTelp
         }</a></p>
                                 <p class="text-gray-700 mb-1"><strong>Alamat:</strong> ${
@@ -137,11 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             `
                                 : ""
                             }
-
                         </div>
                     </div>
                 `;
-        // Add event listener AFTER injecting HTML
+
+        // --- Video Toggle Logic (Existing) ---
         const toggleButton = document.getElementById("toggleVideoButton");
         const videoContainer = document.getElementById("videoContainer");
         const buttonIcon = document.getElementById("buttonIcon");
@@ -153,14 +157,14 @@ document.addEventListener("DOMContentLoaded", () => {
               videoContainer.classList.remove("video-section-hidden");
               videoContainer.classList.add("video-section-shown");
               buttonText.textContent = "Sembunyikan Video Profil";
-              buttonIcon.classList.remove("rotate-0"); // Rotate down initially
-              buttonIcon.classList.add("rotate-180"); // Rotate up
+              buttonIcon.classList.remove("rotate-0");
+              buttonIcon.classList.add("rotate-180");
             } else {
               videoContainer.classList.remove("video-section-shown");
               videoContainer.classList.add("video-section-hidden");
               buttonText.textContent = "Tampilkan Video Profil";
-              buttonIcon.classList.remove("rotate-180"); // Rotate up
-              buttonIcon.classList.add("rotate-0"); // Rotate down
+              buttonIcon.classList.remove("rotate-180");
+              buttonIcon.classList.add("rotate-0");
             }
           });
         }
