@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bulanterbit.github.io/info-umkm-merbung/sitemap.xml

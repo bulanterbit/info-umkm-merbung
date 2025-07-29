@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const umkmListContainer = document.getElementById("umkm-list-container");
 
-  // Clear previous loading message, add a better one before fetch
   umkmListContainer.innerHTML = `
         <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 col-span-full text-center text-gray-600">
             <svg class="animate-spin h-8 w-8 text-gray-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetch("../data/umkm.json")
     .then((response) => {
-      // Check if response is OK (status 200-299)
       if (!response.ok) {
         console.error("Gagal memuat data UMKM:", response.status);
         umkmListContainer.innerHTML =
@@ -33,13 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       umkmData.forEach((umkm) => {
-        // Konversi nama UMKM menjadi format folder (literal)
-        const umkmFolderName = umkm.nama; // Gunakan nama UMKM secara literal
+        const umkmFolderName = umkm.nama;
         const gambarUtamaPath = `../img/${umkmFolderName}/${umkm.gambarUtama}`;
+        const altText = `Gambar ${umkm.jenisUsaha} dari ${umkm.nama} di Merbung, Klaten Selatan`; // Alt text yang lebih deskriptif
 
         const umkmCard = `
                     <div class="bg-white rounded-lg shadow-sm overflow-hidden transform transition-transform duration-300 hover:scale-102 hover:shadow-lg border border-gray-100">
-                        <img src="${gambarUtamaPath}" alt="${umkm.nama}" class="w-full h-48 object-cover object-center border-b border-gray-100">
+                        <img src="${gambarUtamaPath}" alt="${altText}" class="w-full h-48 object-cover object-center border-b border-gray-100">
                         <div class="p-4">
                             <h3 class="text-xl font-semibold text-gray-900 mb-2 line-clamp-1">${umkm.nama}</h3>
                             <p class="text-sm text-gray-700 mb-2 line-clamp-1">${umkm.jenisUsaha}</p>

@@ -1,5 +1,3 @@
-//KKN BN
-
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const umkmId = urlParams.get("id");
@@ -11,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Add loading state
   umkmDetailContainer.innerHTML = `
         <div class="text-center text-gray-600 py-8">
             <svg class="animate-spin h-8 w-8 text-gray-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -35,13 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (umkm) {
         // Konversi nama UMKM menjadi format folder (literal)
-        const umkmFolderName = umkm.nama; // Gunakan nama UMKM secara literal
+        const umkmFolderName = umkm.nama;
         const gambarUtamaPath = `../img/${umkmFolderName}/${umkm.gambarUtama}`;
 
         umkmDetailContainer.innerHTML = `
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div>
-                            <img src="${gambarUtamaPath}" alt="${
+                            <img src="${gambarUtamaPath}" alt="Gambar Utama ${
+          umkm.jenisUsaha
+        } dari ${
           umkm.nama
         }" class="w-full h-80 object-cover rounded-lg shadow-md mb-6 border border-gray-100">
                             ${
@@ -51,8 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <div class="grid grid-cols-2 gap-4 mt-4">
                                     ${umkm.gambarLainnya
                                       .map(
-                                        (imgPath) =>
-                                          `<img src="../img/${umkmFolderName}/${imgPath}" alt="${umkm.nama}" class="w-full h-32 object-cover rounded-lg shadow-sm border border-gray-100">`
+                                        (imgPath, index) =>
+                                          `<img src="../img/${umkmFolderName}/${imgPath}" alt="Gambar Tambahan ${
+                                            umkm.jenisUsaha
+                                          } ${index + 2} dari ${
+                                            umkm.nama
+                                          }" class="w-full h-32 object-cover rounded-lg shadow-sm border border-gray-100">`
                                       )
                                       .join("")}
                                 </div>
@@ -170,6 +173,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
         }
+
+        // Dispatch custom event to update title and potentially meta description
+        // This event is listened to in detailUmkm.html
+        const event = new CustomEvent("umkmLoaded", {
+          detail: {
+            umkmName: umkm.nama,
+            umkmJenisUsaha: umkm.jenisUsaha,
+            umkmDeskripsi: umkm.deskripsi,
+          },
+        });
+        document.dispatchEvent(event);
       } else {
         umkmDetailContainer.innerHTML =
           '<p class="text-red-600 text-center py-8">UMKM tidak ditemukan.</p>';

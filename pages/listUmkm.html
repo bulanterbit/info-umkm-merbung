@@ -1,129 +1,86 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daftar UMKM Merbung - Klaten Selatan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/index.css" />
-    <style>
-      body {
-        font-family: "Lora", serif;
-        background-color: #f8f8f8;
-        color: #333333;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Playfair Display", serif;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50 text-gray-800">
-    <header
-      class="bg-white shadow-sm p-4 sticky top-0 z-50 border-b border-gray-200"
-    >
-      <nav class="container mx-auto flex justify-between items-center">
-        <a
-          href="../index.html"
-          class="text-2xl font-bold text-gray-900 hover:text-black transition-colors duration-200"
-        >
-          INFO UMKM <span class="text-gray-700">MERBUNG</span>
-        </a>
-        <ul class="flex space-x-8">
-          <li>
-            <a
-              href="../index.html"
-              class="text-gray-700 hover:text-black font-semibold transition duration-200"
-              >Beranda</a
-            >
-          </li>
-          <li>
-            <a
-              href="listUmkm.html"
-              class="text-gray-900 hover:text-black font-semibold transition duration-200"
-              >Daftar UMKM</a
-            >
-          </li>
-          <li>
-            <a
-              href="../index.html#about"
-              class="text-gray-700 hover:text-black font-semibold transition duration-200"
-              >Tentang</a
-            >
-          </li>
-          <li>
-            <a
-              href="../doc/guide.pdf"
-              target="_blank"
-              class="text-gray-700 hover:text-black font-semibold transition duration-200"
-              >Unduh Panduan</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
 
-    <section class="py-12 bg-white min-h-screen">
-      <div class="container mx-auto px-4">
-        <h1
-          class="text-4xl md:text-5xl font-bold text-center mb-10 text-gray-900 animate-fade-in-up"
-        >
-          Koleksi UMKM Merbung
-        </h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar UMKM Merbung - Klaten Selatan | KKN UPN Veteran Yogyakarta</title>
+  <meta name="description"
+    content="Daftar lengkap Usaha Mikro, Kecil, dan Menengah (UMKM) yang terdata di Desa Merbung, Klaten Selatan. Jelajahi detail setiap UMKM dan produk unggulannya.">
 
-        <div
-          id="umkm-list-container"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in"
-        >
-          <div
-            class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 col-span-full text-center text-gray-600"
-          >
-            <svg
-              class="animate-spin h-8 w-8 text-gray-500 mx-auto mb-4"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                class="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                stroke-width="4"
-              ></circle>
-              <path
-                class="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              ></path>
-            </svg>
-            Memuat daftar UMKM...
-          </div>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      font-family: 'Lora', serif;
+      background-color: #F8F8F8;
+      color: #333333;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <header class="bg-white shadow-sm p-4 sticky top-0 z-50 border-b border-gray-200">
+    <nav class="container mx-auto flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-gray-900 hover:text-black transition-colors duration-200">
+        INFO UMKM <span class="text-gray-700">MERBUNG</span>
+      </a>
+      <ul class="flex space-x-8">
+        <li><a href="../index.html"
+            class="text-gray-700 hover:text-black font-semibold transition duration-200">Beranda</a></li>
+        <li><a href="listUmkm.html" class="text-gray-900 hover:text-black font-semibold transition duration-200">Daftar
+            UMKM</a></li>
+        <li><a href="../index.html#about"
+            class="text-gray-700 hover:text-black font-semibold transition duration-200">Tentang</a></li>
+        <li><a href="../doc/guide.pdf" target="_blank"
+            class="text-gray-700 hover:text-black font-semibold transition duration-200">Unduh Panduan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="py-12 bg-white min-h-screen">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-center mb-10 text-gray-900 animate-fade-in-up">Koleksi UMKM Merbung
+      </h1>
+
+      <div id="umkm-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 col-span-full text-center text-gray-600">
+          <svg class="animate-spin h-8 w-8 text-gray-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
+          </svg>
+          Memuat daftar UMKM...
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer
-      class="bg-white text-gray-700 py-8 text-center border-t border-gray-200 mt-auto"
-    >
-      <div class="container mx-auto px-4">
-        <p class="mb-2">© 2025 Info UMKM Merbung. Hak Cipta Dilindungi.</p>
-        <p class="text-sm">
-          Inisiatif dari Mahasiswa KKN UPN "Veteran" Yogyakarta Kelompok 318
-          Angkatan 83.
-        </p>
-      </div>
-    </footer>
+  <footer class="bg-white text-gray-700 py-8 text-center border-t border-gray-200 mt-auto">
+    <div class="container mx-auto px-4">
+      <p class="mb-2">© 2025 Info UMKM Merbung. Hak Cipta Dilindungi.</p>
+      <p class="text-sm">
+        Inisiatif dari Mahasiswa KKN UPN "Veteran" Yogyakarta Kelompok 318 Angkatan 83.
+      </p>
+    </div>
+  </footer>
 
-    <script src="../js/listUmkm.js"></script>
-  </body>
+  <script src="../js/listUmkm.js"></script>
+</body>
+
 </html>
