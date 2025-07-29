@@ -1,160 +1,99 @@
-document.addEventListener('DOMContentLoaded', () => {
-const urlParams = new URLSearchParams(window.location.search);
-const umkmId = urlParams.get('id');
-const umkmDetailContainer = document.getElementById('umkm-detail-container');
+<!DOCTYPE html>
+<html lang="id">
 
-if (!umkmId) {
-umkmDetailContainer.innerHTML = '<p class="text-red-600 text-center py-8">ID UMKM tidak ditemukan di URL.</p>';
-return;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail UMKM | Info UMKM Merbung - Klaten Selatan</title>
+  <meta name="description"
+    content="Lihat detail lengkap UMKM dari Desa Merbung, Klaten Selatan. Informasi kontak, jenis usaha, varian produk, hingga lokasi di Google Maps.">
 
-umkmDetailContainer.innerHTML = `
-<div class="text-center text-gray-600 py-8">
-  <svg class="animate-spin h-8 w-8 text-gray-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-    viewBox="0 0 24 24">
-    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-    <path class="opacity-75" fill="currentColor"
-      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-    </path>
-  </svg>
-  Memuat detail UMKM...
-</div>
-`;
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/detailUmkm.css">
+  <style>
+    body {
+      font-family: 'Lora', serif;
+      background-color: #F8F8F8;
+      color: #333333;
+    }
 
-fetch('../data/umkm.json')
-.then(response => {
-if (!response.ok) {
-console.error('Network response was not ok:', response.statusText);
-throw new Error(`HTTP error! status: ${response.status}`);
-}
-return response.json();
-})
-.then(umkmData => {
-const umkm = umkmData.find(item => item.id === umkmId);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+</head>
 
-if (umkm) {
-// Konversi nama UMKM menjadi format folder (literal)
-const umkmFolderName = umkm.nama;
-const gambarUtamaPath = `../img/${umkmFolderName}/${umkm.gambarUtama}`;
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-umkmDetailContainer.innerHTML = `
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-  <div>
-    <img src="${gambarUtamaPath}" alt="Gambar Utama ${umkm.jenisUsaha} dari ${umkm.nama}"
-      class="w-full h-80 object-cover rounded-lg shadow-md mb-6 border border-gray-100">
-    ${umkm.gambarLainnya && umkm.gambarLainnya.length > 0 ? `
-    <div class="grid grid-cols-2 gap-4 mt-4">
-      ${umkm.gambarLainnya.map((imgPath, index) => `<img src="../img/${umkmFolderName}/${imgPath}"
-        alt="Gambar Tambahan ${umkm.jenisUsaha} ${index + 2} dari ${umkm.nama}"
-        class="w-full h-32 object-cover rounded-lg shadow-sm border border-gray-100">`).join('')}
-    </div>
-    ` : ''}
-  </div>
-  <div>
-    <h1 class="text-4xl font-extrabold text-gray-900 mb-4">${umkm.nama}</h1>
-    <p class="text-xl text-gray-700 mb-6">${umkm.jenisUsaha}</p>
+  <header class="bg-white shadow-sm p-4 sticky top-0 z-50 border-b border-gray-200">
+    <nav class="container mx-auto flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-gray-900 hover:text-black transition-colors duration-200">
+        INFO UMKM <span class="text-gray-700">MERBUNG</span>
+      </a>
+      <ul class="flex space-x-8">
+        <li><a href="../index.html"
+            class="text-gray-700 hover:text-black font-semibold transition duration-200">Beranda</a></li>
+        <li><a href="listUmkm.html" class="text-gray-700 hover:text-black font-semibold transition duration-200">Daftar
+            UMKM</a></li>
+        <li><a href="../index.html#about"
+            class="text-gray-700 hover:text-black font-semibold transition duration-200">Tentang</a></li>
+        <li><a href="../doc/guide.pdf" target="_blank"
+            class="text-gray-700 hover:text-black font-semibold transition duration-200">Unduh Panduan</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    ${umkm.youtubeLink ? `
-    <div class="mb-6">
-      <button id="toggleVideoButton"
-        class="flex items-center text-gray-700 hover:text-black font-semibold mb-2 transition-colors duration-200 focus:outline-none">
-        <span id="buttonText">Tampilkan Video Profil</span>
-        <svg id="buttonIcon" class="w-5 h-5 ml-2 transform transition-transform duration-300" fill="none"
-          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+  <section class="py-12 bg-white flex-grow">
+    <div class="container mx-auto px-4">
+      <button onclick="history.back()"
+        class="flex items-center text-gray-700 hover:text-black mb-8 font-semibold transition duration-200">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
+        Kembali
       </button>
-      <div id="videoContainer" class="video-section-hidden overflow-hidden transition-all duration-500 ease-in-out">
-        <div class="video-wrapper rounded-lg shadow-md border border-gray-100">
-          <iframe src="${umkm.youtubeLink}" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen class="rounded-lg"></iframe>
-        </div>
+
+      <div id="umkm-detail-container" class="bg-white rounded-lg shadow-xl p-8 border border-gray-100 animate-fade-in">
+        <p class="text-center text-gray-600">Memuat detail UMKM...</p>
       </div>
     </div>
-    ` : ''}
+  </section>
 
-    <h2 class="text-2xl font-semibold text-gray-800 mb-3 border-b pb-2 border-gray-200">Deskripsi</h2>
-    <p class="text-gray-700 leading-relaxed mb-6">${umkm.deskripsi}</p>
-
-    <div class="mb-6 border-b pb-2 border-gray-200">
-      <h3 class="text-lg font-semibold text-gray-800 mb-2">Informasi Kontak & Lokasi:</h3>
-      <p class="text-gray-700 mb-1"><strong>No WA/Telp:</strong> <a
-          href="https://wa.me/${umkm.noWaTelp.replace(/[^0-9]/g, '').split(',')[0].trim()}" target="_blank"
-          class="text-gray-700 hover:text-black hover:underline font-medium">${umkm.noWaTelp}</a></p>
-      <p class="text-gray-700 mb-1"><strong>Alamat:</strong> ${umkm.alamat}</p>
-      <p class="text-gray-700 mb-1"><strong>Range Harga:</strong> ${umkm.rangeHarga}</p>
+  <footer class="bg-white text-gray-700 py-8 text-center border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <p class="mb-2">© 2025 Info UMKM Merbung. Hak Cipta Dilindungi.</p>
+      <p class="text-sm">
+        Inisiatif dari Mahasiswa KKN UPN "Veteran" Yogyakarta Kelompok 318 Angkatan 83.
+      </p>
     </div>
+  </footer>
 
-    ${umkm.varian && umkm.varian.length > 0 ? `
-    <div class="mb-6 border-b pb-2 border-gray-200">
-      <h3 class="text-lg font-semibold text-gray-800 mb-2">Varian Produk/Layanan:</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-1">
-        ${umkm.varian.map(varian => `<li>${varian}</li>`).join('')}
-      </ul>
-    </div>
-    ` : ''}
+  <script src="../js/detailUmkm.js"></script>
+  <script>
+    // Opsional: Update judul halaman detail UMKM secara dinamis
+    // Fungsi ini akan mengambil nama UMKM setelah data dimuat
+    // dan mengupdate title tag HTML. Ini bagus untuk SEO spesifik per UMKM.
+    document.addEventListener('umkmLoaded', function (e) {
+      const umkmName = e.detail.umkmName;
+      if (umkmName) {
+        document.title = `Detail ${umkmName} | Info UMKM Merbung - Klaten Selatan`;
+        // Anda juga bisa update meta description di sini
+        // const metaDescription = document.querySelector('meta[name="description"]');
+        // if (metaDescription) {
+        //     metaDescription.setAttribute('content', `Informasi lengkap ${umkmName}, UMKM di Merbung Klaten Selatan. Temukan produk, kontak, dan lokasi.`);
+        // }
+      }
+    });
+  </script>
+</body>
 
-    ${umkm.catatan ? `
-    <div class="mb-6 bg-gray-50 border-l-4 border-gray-400 text-gray-800 p-4 rounded-md">
-      <p class="font-semibold">Catatan:</p>
-      <p class="text-sm">${umkm.catatan}</p>
-    </div>
-    ` : ''}
-
-    ${umkm.gmapsEmbed ? `
-    <h3 class="text-lg font-semibold text-gray-800 mb-2">Lokasi di Google Maps:</h3>
-    <div class="video-wrapper rounded-lg shadow-md mb-6 border border-gray-100">
-      <iframe src="${umkm.gmapsEmbed}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        class="rounded-lg"></iframe>
-    </div>
-    ` : ''}
-  </div>
-</div>
-`;
-
-// --- Video Toggle Logic (Existing) ---
-const toggleButton = document.getElementById('toggleVideoButton');
-const videoContainer = document.getElementById('videoContainer');
-const buttonIcon = document.getElementById('buttonIcon');
-const buttonText = document.getElementById('buttonText');
-
-if (toggleButton && videoContainer && buttonIcon && buttonText) {
-toggleButton.addEventListener('click', () => {
-if (videoContainer.classList.contains('video-section-hidden')) {
-videoContainer.classList.remove('video-section-hidden');
-videoContainer.classList.add('video-section-shown');
-buttonText.textContent = 'Sembunyikan Video Profil';
-buttonIcon.classList.remove('rotate-0');
-buttonIcon.classList.add('rotate-180');
-} else {
-videoContainer.classList.remove('video-section-shown');
-videoContainer.classList.add('video-section-hidden');
-buttonText.textContent = 'Tampilkan Video Profil';
-buttonIcon.classList.remove('rotate-180');
-buttonIcon.classList.add('rotate-0');
-}
-});
-}
-
-// Dispatch custom event to update title and potentially meta description
-// This event is listened to in detailUmkm.html
-const event = new CustomEvent('umkmLoaded', { detail: { umkmName: umkm.nama, umkmJenisUsaha: umkm.jenisUsaha,
-umkmDeskripsi: umkm.deskripsi } });
-document.dispatchEvent(event);
-
-} else {
-umkmDetailContainer.innerHTML = '<p class="text-red-600 text-center py-8">UMKM tidak ditemukan.</p>';
-}
-})
-.catch(error => {
-console.error('Error fetching UMKM data:', error);
-umkmDetailContainer.innerHTML = `
-<div class="text-center text-red-600 py-8">
-  <p>Maaf, gagal memuat detail UMKM.</p>
-  <p class="text-sm mt-2">Silakan periksa koneksi internet Anda atau coba lagi nanti.</p>
-  <p class="text-xs mt-1">(${error.message})</p>
-</div>
-`;
-});
-});
+</html>
