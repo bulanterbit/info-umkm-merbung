@@ -1,3 +1,5 @@
+//KKN BN
+
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const umkmId = urlParams.get("id");
